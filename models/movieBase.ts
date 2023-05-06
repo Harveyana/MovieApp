@@ -11,7 +11,7 @@ export default class movieBase{
     Actors: string
     Poster: string
 
-    constructor(initData?: any){
+    constructor(initData:{imdbID: string,Title: string,Year: number,Genre: string,Actors: string,Poster: string}){
         this.imdbID = initData && initData.imdbID
         this.Title = initData && initData.Title
         this.Year = initData && initData.Year

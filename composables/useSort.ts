@@ -1,6 +1,7 @@
 interface MyObject {
-    [key: string]: string | number;
+    [key: string]: string;
 }
+
 
 export const useSort = ()=>{
     

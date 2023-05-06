@@ -1,6 +1,6 @@
 // import { useStorage } from '@vueuse/core'
 interface MyObject {
-    [key: string]: string | number;
+    [key: string]: string;
 }
 
 export const useFilter = ()=>{

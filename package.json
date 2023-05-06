@@ -10,9 +10,11 @@
   },
   "devDependencies": {
     "nuxt": "^3.3.3",
-    "nuxt-quasar-ui": "^1.6.0"
+    "nuxt-quasar-ui": "^1.7.2"
   },
   "dependencies": {
-    "@vueuse/core": "^9.13.0"
+    "@quasar/extras": "^1.16.2",
+    "@vueuse/core": "^9.13.0",
+    "quasar": "^2.11.10"
   }
 }

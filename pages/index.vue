@@ -53,21 +53,24 @@ import{ matNoAccounts, matDownload} from '@quasar/extras/material-icons'
 definePageMeta({
   layout: "custom"
 });
+ 
+interface movie {
+    [key: string]: string;
+}
 
-
-interface MyObject {
-  [key: string]: string[];
-  }
-const allMovies = ref<any>([])
+// interface MyObject {
+//   [key: string]: string[];
+//   }
+const allMovies = ref<movie[]>([])
 const listValue = ref<string>('')
 const searchValue:Ref<string|number> = ref('')
 const filterValue:Ref<string> = ref('')
 const sortValue:Ref<string> = ref('')
 const currentPage:Ref<number> = ref(1)
-const result:Ref<any> = ref([])
+const result:Ref<movie[]> = ref([])
 const favouritesList:Ref<string[]> = ref([]);
-const filteredMovies:Ref<any> = ref([])
-const defaultMovies:Ref<any> = ref([])
+const filteredMovies:Ref<movie[]> = ref([])
+const defaultMovies:Ref<movie[]> = ref([])
 const onMovieList = ref<boolean>(false)
 const moviesFound:Ref<boolean> =ref(true)
 const newSearch =ref<boolean>(true)
@@ -146,7 +149,7 @@ const fetchMovies = async()=>{
 const fetchFavourites = ()=>{
     const listString = localStorage.getItem('movieLists');
     if (listString) {
-            let lists: MyObject = JSON.parse(listString) as MyObject;
+            let lists: movie[] = JSON.parse(listString) as movie[];
             const listArray = Object.getOwnPropertyNames(lists)
             favouritesList.value.push(...listArray)
         }
